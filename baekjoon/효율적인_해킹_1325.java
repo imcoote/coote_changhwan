@@ -5,6 +5,9 @@
  * 시간: 10852 ms
  *******************************************************************************/
 
+import java.io.*;
+import java.util.*;
+
 public class 효율적인_해킹_1325 {
     static int N, M;
     static List<Integer>[] graph;
