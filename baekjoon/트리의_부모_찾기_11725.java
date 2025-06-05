@@ -8,7 +8,6 @@
 import java.io.*;
 import java.util.*;
 
-
 public class 트리의_부모_찾기_11725 {
     // 연결된 번호 저장하고 부모 노드 저장할 수 있는 노드 클래스 생성
     static class Node {
