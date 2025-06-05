@@ -5,11 +5,11 @@
  * 시간: 100 ms
  *******************************************************************************/
 
+// 이 문제도 양방향 그래프 만들어 bfs 돌리기
+
 import java.io.*;
 import java.util.*;
 
-
-// 이 문제도 양방향 그래프 만들어 bfs 돌리기
 public class 촌수계산_2644 {
     static int n, start, end, m;
     static ArrayList<Integer>[] graph;
