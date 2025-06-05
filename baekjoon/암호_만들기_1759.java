@@ -5,13 +5,14 @@
  * 시간: 112 ms
  *******************************************************************************/
 
-import java.io.*;
-import java.util.*;
-
 // 문제의 조건
 // 1. 서로 다른 L개의 알파벳 소문자
 // 2. 최소 한 개의 모음과 최소 두 개의 자음으로 구성
 // 3. 알파벳 순으로 증가하는 순서로 배열
+
+import java.io.*;
+import java.util.*;
+
 public class 암호_만들기_1759 {
     static int L, C;
     static char[] letters;
