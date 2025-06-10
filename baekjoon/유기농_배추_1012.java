@@ -1,24 +1,26 @@
 /*******************************************************************************
  * 소요시간: 2시간 45분
  * 시간복잡도: O(N × M)
- * 메모리: 31096 kb
- * 시간: 324 ms
+ * 메모리: 15976 kb
+ * 시간: 144 ms
  *******************************************************************************/
 
+import java.io.*;
 import java.util.*;
 
 public class 유기농_배추_1012 {
-    public static void main(String[] args) {
-        // Scanner 정의 후 바로 테스트케이스 갯수 입력받아 정의하기
-        Scanner scanner = new Scanner(System.in);
-        int testCase = scanner.nextInt();
+    public static void main(String[] args) throws IOException {
+        // 테스트케이스 갯수 입력받아 정의하기
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int testCase = Integer.parseInt(br.readLine());
 
         // 테스트케이스 갯수만큼 반복하기
         for (int t = 0; t < testCase; t++) {
             // 가로길이, 세로길이, 배추위치 갯수 입력받기
-            int M = scanner.nextInt();
-            int N = scanner.nextInt();
-            int K = scanner.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int M = Integer.parseInt(st.nextToken());
+            int N = Integer.parseInt(st.nextToken());
+            int K = Integer.parseInt(st.nextToken());
 
             // 배추위치를 나타낸 이차원배열, 방문여부를 나타낸 이차원배열 정의
             // <<이차원배열 정의할 때 X축, Y축은 [Y][X] 이런식으로 정의한다!!>>
@@ -26,8 +28,9 @@ public class 유기농_배추_1012 {
             boolean[][] visited = new boolean[N][M];
 
             for (int i = 0; i < K; i++) {
-                int x = scanner.nextInt();
-                int y = scanner.nextInt();
+                st = new StringTokenizer(br.readLine());
+                int x = Integer.parseInt(st.nextToken());
+                int y = Integer.parseInt(st.nextToken());
                 map[y][x] = 1;
             }
 
