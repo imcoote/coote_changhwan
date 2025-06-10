@@ -1,33 +1,35 @@
 /*******************************************************************************
  * 소요시간: 1시간 15분
  * 시간복잡도: O(1)
- * 메모리: 17956 kb
- * 시간: 184 ms
+ * 메모리: 14236 kb
+ * 시간: 104 ms
  *******************************************************************************/
 
+import java.io.*;
 import java.util.*;
 
 public class 톱니바퀴_14891 {
     static int[][] gear = new int[4][8]; // 톱니바퀴 상태
     static int K;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // 톱니바퀴 입력
         for (int i = 0; i < 4; i++) {
-            String line = sc.nextLine();
+            String line = br.readLine();
             for (int j = 0; j < 8; j++) {
                 gear[i][j] = line.charAt(j) - '0';
             }
         }
 
-        K = sc.nextInt();
+        K = Integer.parseInt(br.readLine());
 
         // 회전 명령 입력
         for (int k = 0; k < K; k++) {
-            int n = sc.nextInt() - 1;
-            int d = sc.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st.nextToken()) - 1;
+            int d = Integer.parseInt(st.nextToken());
 
             int[] dir = new int[4]; // 회전 방향
             dir[n] = d;
