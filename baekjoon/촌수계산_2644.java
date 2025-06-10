@@ -1,8 +1,8 @@
 /*******************************************************************************
  * 소요시간: 20분
  * 시간복잡도: O(n + m)
- * 메모리: 14144 kb
- * 시간: 100 ms
+ * 메모리: 14228 kb
+ * 시간: 104 ms
  *******************************************************************************/
 
 // 이 문제도 양방향 그래프 만들어 bfs 돌리기
@@ -12,7 +12,7 @@ import java.util.*;
 
 public class 촌수계산_2644 {
     static int n, start, end, m;
-    static ArrayList<Integer>[] graph;
+    static List<List<Integer>> graph;
     static boolean[] visited;
 
     public static void main(String[] args) throws IOException {
@@ -23,11 +23,11 @@ public class 촌수계산_2644 {
         start = Integer.parseInt(st.nextToken());
         end = Integer.parseInt(st.nextToken());
 
-        graph = new ArrayList[n + 1];
+        graph = new ArrayList<>();
         visited = new boolean[n + 1];
 
-        for (int i = 1; i <= n; i++) {
-            graph[i] = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            graph.add(new ArrayList<>());
         }
 
         m = Integer.parseInt(br.readLine());
@@ -38,8 +38,8 @@ public class 촌수계산_2644 {
             int parent = Integer.parseInt(st.nextToken());
             int child = Integer.parseInt(st.nextToken());
 
-            graph[parent].add(child);
-            graph[child].add(parent);
+            graph.get(parent).add(child);
+            graph.get(child).add(parent);
         }
 
         System.out.println(bfs(start, end));
@@ -57,7 +57,7 @@ public class 촌수계산_2644 {
 
             if (person == target) return depth;
 
-            for (int next : graph[person]) {
+            for (int next : graph.get(person)) {
                 if (!visited[next]) {
                     visited[next] = true;
                     queue.offer(new int[]{next, depth + 1});
