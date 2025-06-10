@@ -1,8 +1,8 @@
 /*******************************************************************************
  * 소요시간: 30분
  * 시간복잡도: O(T(N + M))
- * 메모리: 55012 kb
- * 시간: 384 ms
+ * 메모리: 56480 kb
+ * 시간: 412 ms
  *******************************************************************************/
 
 import java.io.*;
@@ -10,7 +10,7 @@ import java.util.*;
 
 public class 상근이의_여행_9372 {
     // 그래프 인접 리스트, 방문여부, 사용한 비행기 수 변수 설정
-    static List<Integer>[] graph;
+    static List<List<Integer>> graph;
     static boolean[] visited;
     static int planesCount;
 
@@ -25,9 +25,9 @@ public class 상근이의_여행_9372 {
             int M = Integer.parseInt(st.nextToken());
 
             // 그래프 초기화
-            graph = new ArrayList[N + 1];
-            for (int i = 1; i <= N; i++) {
-                graph[i] = new ArrayList<>();
+            graph = new ArrayList<>();
+            for (int i = 0; i <= N; i++) {
+                graph.add(new ArrayList<>());
             }
 
             // 비행기 정보 입력 (양방향)
@@ -36,8 +36,8 @@ public class 상근이의_여행_9372 {
                 int a = Integer.parseInt(st.nextToken());
                 int b = Integer.parseInt(st.nextToken());
 
-                graph[a].add(b);
-                graph[b].add(a);
+                graph.get(a).add(b);
+                graph.get(b).add(a);
             }
 
             visited = new boolean[N + 1];
@@ -56,7 +56,7 @@ public class 상근이의_여행_9372 {
     private static void dfs(int curr) {
         visited[curr] = true;
 
-        for (int next : graph[curr]) {
+        for (int next : graph.get(curr)) {
             if (!visited[next]) {
                 planesCount++;
                 dfs(next);
