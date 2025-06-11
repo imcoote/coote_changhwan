@@ -10,7 +10,7 @@ import java.util.*;
 
 public class 효율적인_해킹_1325 {
     static int N, M;
-    static List<Integer>[] graph;
+    static List<List<Integer>> graph;
     static int[] result;
 
     public static void main(String[] args) throws IOException {
@@ -20,11 +20,11 @@ public class 효율적인_해킹_1325 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        graph = new ArrayList[N + 1];
+        graph = new ArrayList<>();
         result = new int[N + 1];
 
-        for (int i = 1; i <= N; i++) {
-            graph[i] = new ArrayList<>();
+        for (int i = 0; i <= N; i++) {
+            graph.add(new ArrayList<>());
         }
 
         for (int i = 0; i < M; i++) {
@@ -32,7 +32,7 @@ public class 효율적인_해킹_1325 {
             int A = Integer.parseInt(st.nextToken());
             int B = Integer.parseInt(st.nextToken());
 
-            graph[B].add(A);
+            graph.get(B).add(A);
         }
 
         for (int i = 1; i <= N; i++) {
@@ -66,7 +66,7 @@ public class 효율적인_해킹_1325 {
         while (!q.isEmpty()) {
             int cur = q.poll();
 
-            for (int next : graph[cur]) {
+            for (int next : graph.get(cur)) {
                 if (!visited[next]) {
                     visited[next] = true;
                     result[start]++;
