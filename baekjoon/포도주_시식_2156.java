@@ -6,7 +6,6 @@
  *******************************************************************************/
 
 import java.io.*;
-import java.util.*;
 
 public class 포도주_시식_2156 {
     public static void main(String[] args) throws IOException {

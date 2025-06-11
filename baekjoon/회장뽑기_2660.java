@@ -5,11 +5,11 @@
  * 시간: 132 ms
  *******************************************************************************/
 
+// 알고리즘 분류에 폴라이드-워셜이라고 적혀있어 관련 자료 찾고 적용하였음
+
 import java.io.*;
 import java.util.*;
 
-
-// 알고리즘 분류에 폴라이드-워셜이라고 적혀있어 관련 자료 찾고 적용하였음
 public class 회장뽑기_2660 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

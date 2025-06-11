@@ -8,7 +8,7 @@
 import java.io.*;
 import java.util.*;
 
-public class 회전초밥_15961 {
+public class 회전초밥_2531 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());

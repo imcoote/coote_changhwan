@@ -5,10 +5,10 @@
  * 시간: 160 ms
  *******************************************************************************/
 
+// 0-1 knapsack problem 문제
+
 import java.io.*;
 import java.util.*;
-
-// 0-1 knapsack problem 문제
 
 public class 평범한_배낭_12865 {
     public static void main(String[] args) throws IOException {

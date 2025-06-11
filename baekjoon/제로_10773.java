@@ -1,26 +1,26 @@
-import java.util.*;
-
 /*******************************************************************************
  * 소요시간: 1시간 30분
  * 시간복잡도: O(K)
  *      -> 입력 받은 숫자(K)만큼 한번씩만 처리
- * 메모리: 113348 kb
- * 시간: 700 ms
+ * 메모리: 23988 kb
+ * 시간: 208 ms
  *******************************************************************************/
 
+import java.io.*;
+import java.util.*;
+
 public class 제로_10773 {
-    public static void main(String[] args) {
-        // 자바는 Scanner 로 입력을 받는다
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // 숫자를 입력 받을려면 nextInt() 메서드 사용
-        int K = scanner.nextInt();
+        int K = Integer.parseInt(br.readLine());
 
         // 스택 형식으로 구현하기 위해 java 의 Stack 클래스사용
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < K; i++) {
-            int num = scanner.nextInt();
+            int num = Integer.parseInt(br.readLine());
             // 문제 조건에서
             // "정수가 '0'일 경우에 지울 수 있는 수가 있음을 보장할 수 있다."
             // 라고 적혀 있어서 stack 이 비어있는 조건은 넣지 않았다!!
